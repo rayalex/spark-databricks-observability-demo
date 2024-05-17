@@ -73,11 +73,11 @@
 
 ### Built With
 
-* [![Databricks][Databricks.com]][Databricks-url]
-* [![Prometheus][Prometheus.com]][Prometheus-url]
-* [![Grafana][Grafana.com]][Grafana-url]
-* [![Pyroscope][Pyroscope.com]][Pyroscope-url]
-* [![Spark][Spark]][Spark-url]
+[![Databricks][Databricks.com]][Databricks-url]
+[![Prometheus][Prometheus.com]][Prometheus-url]
+[![Grafana][Grafana.com]][Grafana-url]
+[![Pyroscope][Pyroscope.com]][Pyroscope-url]
+[![Spark][Spark]][Spark-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
