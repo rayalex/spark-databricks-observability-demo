@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy over necessary jars
-cp /dbfs/FileStore/jars/dbx-obs-demo/spark_metrics.jar /databricks/jars
+cp /dbfs/jars/dbx-obs-demo/spark_metrics.jar /databricks/jars
 
 # configure jmx
 cat > /databricks/spark/conf/jmxCollector.yaml <<EOL
