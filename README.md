@@ -127,7 +127,7 @@ export TF_VAR_pyroscope_host={prometheus_host}:4040
 ### Pyroscope Demo
 If set correctly, here's what you should get at the end. The following example demonstrates profiling a Spark application that is bottlenecked by reading `lzw` compressed files, as well as using `regex` to process the data.
 
-[![Pyroscope Demo](img/pyroscope_demo.png)]
+![Pyroscope Demo](img/pyroscope_demo.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
