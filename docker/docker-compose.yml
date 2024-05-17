@@ -1,0 +1,28 @@
+version: '3'
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    command: --config.file=/etc/prometheus/prometheus.yml
+  pushgateway:
+    image: prom/pushgateway
+    command: --web.enable-admin-api
+    ports:
+      - '9091:9091'
+  grafana:
+    image: grafana/grafana
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./config/grafana/datasources:/etc/grafana/provisioning/datasources/
+  pyroscope:
+    image: grafana/pyroscope
+    ports:
+      - '4040:4040'
+    environment:
+      - PYROSCOPE_SERVER_ADDRESS=pyroscope:4040
+      - PYROSCOPE_APPLICATION_NAME=databricks_demo
+      - PYROSCOPE_APPLICATION_ENV=dev
