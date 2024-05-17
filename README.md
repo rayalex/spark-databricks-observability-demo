@@ -124,6 +124,13 @@ export TF_VAR_prometheus_pushgateway_host={pushgateway_host}:9091
 export TF_VAR_pyroscope_host={prometheus_host}:4040
 ```
 
+### Prometheus Demo
+If configured, you'll be able to see all relevant metrics in Grafana. If you're using tagging, you are also able to filter by cluster, job, and other tags.
+
+The example below shows the CPU usage of each executor in the Spark cluster.
+
+![Prometheus Demo](img/prometheus_demo.png)
+
 ### Pyroscope Demo
 If set correctly, here's what you should get at the end. The following example demonstrates profiling a Spark application that is bottlenecked by reading `lzw` compressed files, as well as using `regex` to process the data.
 
