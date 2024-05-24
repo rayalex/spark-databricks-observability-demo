@@ -66,6 +66,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+Dive deeply into performance details and uncover what Spark Execution Plan doesn't typically show.
 
 ![Product Name Screen Shot][product-screenshot]
 
