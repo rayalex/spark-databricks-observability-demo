@@ -90,6 +90,33 @@ This project demonstrates how to monitor and profile Spark applications in Datab
 
 Besides Prometheus, Pyroscope and Grafana, this project will create a small single-node Spark Cluster and a set of init scripts to configure it to push metrics to Prometheus Pushgateway and Pyroscope.
 
+
+### High-level architecture
+
+```
+       ┌─────────┐                                                                         
+       │ Grafana │                                                                         
+       └────▲────┘                                                                         
+            │                           ┌────────────────┐                                 
+            │                           │   Databricks   │                                 
+   ┌────────┴────────┐                  │  Spark Cluster │                                 
+   │   Prometheus    │                  │                │                                 
+   └────────▲────────┘                  │                │                                 
+            │                           │ ┌────────────┐ │                                 
+            │                       ┌───┼─┤ Driver     ├─┼───┐                             
+            │                       │   │ └────────────┘ │   │                             
+            │                       │   │                │   │                             
+┌───────────┴────────────┐  Metrics ▼   │ ┌────────────┐ │   ▼   APM Traces   ┌───────────┐
+│ Prometheus Pushgateway │◄─────────────┼─┤ Executor   ├─┼───────────────────►│ Pyroscope │
+└────────────────────────┘          ▲   │ └────────────┘ │   ▲                └───────────┘
+                                    │   │                │   │                             
+                                    │   │ ┌────────────┐ │   │                             
+                                    └───┼─┤ Executor   ├─┼───┘                             
+                                        │ └────────────┘ │                                 
+                                        │                │                                 
+                                        └────────────────┘                                 
+```
+
 ### Prerequisites
 
 This demo uses [Terraform](https://www.terraform.io/) to create all necessary resources in your Databricks Workspace. You will need Terraform version 1.40 or later installed on your machine.
