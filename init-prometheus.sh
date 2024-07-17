@@ -12,6 +12,7 @@ EOL
 
 # configure spark metrics to use pushgateway as target
 pushgatewayHost=$PROMETHEUS_HOST
+pushgatewayJobName=$PROMETHEUS_JOB_NAME
 cat >> /databricks/spark/conf/metrics.properties <<EOL
 # Enable Prometheus for all instances by class name
 *.sink.prometheus.class=org.apache.spark.banzaicloud.metrics.sink.PrometheusSink
@@ -23,7 +24,7 @@ cat >> /databricks/spark/conf/metrics.properties <<EOL
 # Metrics name processing (version 2.3-1.1.0 +)
 # *.sink.prometheus.metrics-name-capture-regex=<regular expression to capture sections metric name sections to be replaces>
 # *.sink.prometheus.metrics-name-replacement=<replacement captured sections to be replaced with>
-*.sink.prometheus.labels=job_name=demo
+*.sink.prometheus.labels=job_name=$pushgatewayJobName
 # Support for JMX Collector (version 2.3-2.0.0 +)
 *.sink.prometheus.enable-dropwizard-collector=true
 *.sink.prometheus.enable-jmx-collector=true

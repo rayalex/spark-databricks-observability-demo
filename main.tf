@@ -58,6 +58,7 @@ resource "databricks_cluster" "demo" {
 
   spark_env_vars = {
     "PROMETHEUS_HOST" : var.prometheus_pushgateway_host
+    "PROMETHEUS_JOB_NAME" : "dbx-interractive"
   }
 
   custom_tags = {
