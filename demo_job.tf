@@ -4,13 +4,13 @@ resource "databricks_notebook" "calculate_pi" {
   content_base64 = base64encode(<<-EOT
     import scala.math.random
 
-    val n = 1000000000
+    val n = 2000000000
 
     val count = sc.parallelize(1 to n).map { i =>
-    val x = random * 2 - 1
-    val y = random * 2 - 1
+      val x = random * 2 - 1
+      val y = random * 2 - 1
 
-    if (x*x + y*y < 1) 1 else 0
+      if (x*x + y*y < 1) 1 else 0
     }.reduce(_ + _)
 
     println("Pi is roughly " + 4.0 * count / n)
