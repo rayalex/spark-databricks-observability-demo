@@ -2,10 +2,9 @@ resource "databricks_notebook" "calculate_pi" {
   path     = "${data.databricks_current_user.me.home}/dbx-obs-demo/CalculatePi"
   language = "SCALA"
   content_base64 = base64encode(<<-EOT
-    %scala
     import scala.math.random
 
-    val n = 1000000
+    val n = 1000000000
 
     val count = sc.parallelize(1 to n).map { i =>
     val x = random * 2 - 1
