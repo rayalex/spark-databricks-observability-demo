@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # copy over necessary jars
-cp /dbfs/jars/dbx-obs-demo/spark_metrics.jar /databricks/jars
+cp ${metrics_jar_path} /databricks/jars
 
 # configure jmx
 cat > /databricks/spark/conf/jmxCollector.yaml <<EOL
@@ -30,7 +30,7 @@ cat >> /databricks/spark/conf/metrics.properties <<EOL
 *.sink.prometheus.enable-jmx-collector=true
 *.sink.prometheus.jmx-collector-config=/databricks/spark/conf/jmxCollector.yaml
 
-# Enable HostName in Instance instead of Appid (Default value is false i.e. instance=${appid})
+# Enable HostName in Instance instead of Appid (Default value is false)
 *.sink.prometheus.enable-hostname-in-instance=true
 
 # Enable JVM metrics source for all instances by class name
