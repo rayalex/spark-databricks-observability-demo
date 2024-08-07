@@ -157,7 +157,7 @@ If configured, you'll be able to see all relevant metrics in Grafana. If you're 
 
 The example below shows the CPU usage of each executor in the Spark cluster.
 
-![Prometheus Demo](img/prometheus_demo.png)
+![Prometheus Demo](img/prometheus_dashboard.jpg)
 
 ### Pyroscope Demo
 If set correctly, here's what you should get at the end. The following example demonstrates profiling a Spark application that is bottlenecked by reading `lzw` compressed files, as well as using `regex` to process the data.
