@@ -155,7 +155,7 @@ export TF_VAR_pyroscope_host={prometheus_host}:4040
 ### Prometheus Demo
 If configured, you'll be able to see all relevant metrics in Grafana. If you're using tagging, you are also able to filter by cluster, job, and other tags.
 
-The example below shows the CPU usage of each executor in the Spark cluster.
+The example below shows how to configure the basic dashboard to show job metrics over time.
 
 ![Prometheus Demo](img/prometheus_dashboard.jpg)
 
