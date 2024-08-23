@@ -181,6 +181,15 @@ Project Link: [https://github.com/rayalex/spark-databricks-observability-demo](h
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- CONTACT -->
+## Thanks to
+Special thanks to these, as without them this would not be possible:
+
+- [spark-metrics](https://github.com/banzaicloud/spark-metrics)
+- [sparkMeasure](https://github.com/cerndb/sparkMeasure)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/rayalex/spark-databricks-observability-demo.svg?style=for-the-badge
